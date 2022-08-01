@@ -98,10 +98,11 @@ public class JobData {
         // TODO - implement this method
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
-        for (HashMap<String, String> row : allJobs) {
-            for (Map.Entry<String, String> column : row.entrySet()) {
-                if (column.getValue().toLowerCase().contains(value.toLowerCase()) && !jobs.contains(row)) {
-                    jobs.add(row);
+        for (HashMap<String, String> newJobs : allJobs) {
+            for (Map.Entry<String, String> row : newJobs.entrySet()) {
+                if (row.getValue().toLowerCase().contains(value.toLowerCase())) {
+                    jobs.add(newJobs);
+                    break;
                 }
             }
         }
